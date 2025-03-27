@@ -27,9 +27,27 @@ if (choice === "rock") {
 //return the true response from the else if chain.
 }
 
-function playRound() {
+function playRound(humanChoice, computerChoice) {
+//Create variables to grab choice from other functions.
+console.log(`Computer: ${computerChoice} Human: ${humanChoice}`);
 
+//create and else if chain, check if the choice is ===, <, or > and output
+if (humanChoice === computerChoice) {
+    return console.log("IT'S A DRAW!");
+} else if (humanChoice === 0 && computerChoice === 1) {
+    return console.log("COMPUTER WINS!");
+} else if (humanChoice === 1 && computerChoice === 2) {
+    return console.log("COMPUTER WINS!");
+} else if (humanChoice === 2 && computerChoice === 0) {
+    return console.log("COMPUTER WINS!");
+} else if (humanChoice === 2 && computerChoice === 1) {
+    return console.log("HUMAN WINS!");
+} else if (humanChoice === 2 && computerChoice === 1) {
+    return console.log("HUMAN WINS!");
+}
 }
 
-console.log(getHumanChoice());
-console.log(getComputerChoice());
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
