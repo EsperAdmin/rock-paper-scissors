@@ -1,3 +1,7 @@
+//Human and computer default scores
+let humanScore = 0;
+let computerScore = 0;
+
 //Create function to get a ranondom choice
 function getComputerChoice() {
 //Create 3 variables for rock, paper, and scissors === 0,1, and 2.
@@ -21,20 +25,27 @@ if (getRandom === rock) {
 
 
 function getHumanChoice() {
+//Create variable for human choice
+
 //Prompt the user for a choice and make it lowercase!
 let choice = prompt("Pick a choice! ROCK!, PAPER!, OR SCISSORS!").toLowerCase();
 //Create a else if chains for what the user inputs
 if (choice === "rock") {
-    return console.log("You picked ROCK!");
+    return 0;
 } else if (choice === "paper") {
-    return console.log("You picked PAPER!");
+    return 1;
 } else if (choice === "scissors") {
-    return console.log("You picked SCISSORS!");
+    return 2;
 } else {
-    return console.log("Uhhh... something went wrong.")
+    //Error number!
+    return 3;
 }
 //return the true response from the else if chain.
 }
 
-getHumanChoice();
+function playRound() {
+
+}
+
+console.log(getHumanChoice());
 getComputerChoice();
