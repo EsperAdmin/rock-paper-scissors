@@ -19,4 +19,22 @@ if (getRandom === rock) {
 //return the true response from the else if chain.
 }
 
+
+function getHumanChoice() {
+//Prompt the user for a choice and make it lowercase!
+let choice = prompt("Pick a choice! ROCK!, PAPER!, OR SCISSORS!").toLowerCase();
+//Create a else if chains for what the user inputs
+if (choice === "rock") {
+    return console.log("You picked ROCK!");
+} else if (choice === "paper") {
+    return console.log("You picked PAPER!");
+} else if (choice === "scissors") {
+    return console.log("You picked SCISSORS!");
+} else {
+    return console.log("Uhhh... something went wrong.")
+}
+//return the true response from the else if chain.
+}
+
+getHumanChoice();
 getComputerChoice();
