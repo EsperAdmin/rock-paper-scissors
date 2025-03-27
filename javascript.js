@@ -1,1 +1,4 @@
-console.log("Hello World!")
+//Create function to get a ranondom choice
+function getComputerChoice() {
+
+}
