@@ -11,8 +11,6 @@ return Math.floor(Math.random() * 3);
 
 
 function getHumanChoice() {
-//Create variable for human choice
-
 //Prompt the user for a choice and make it lowercase!
 let choice = prompt("Pick a choice! ROCK!, PAPER!, OR SCISSORS!").toLowerCase();
 //Create a else if chains for what the user inputs
