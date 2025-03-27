@@ -19,4 +19,4 @@ if (getRandom === rock) {
 //return the true response from the else if chain.
 }
 
-console.log(getComputerChoice());
+getComputerChoice();
