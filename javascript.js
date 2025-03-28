@@ -48,6 +48,8 @@ if (humanChoice === computerChoice) {
 } else if (humanChoice === 1 && computerChoice === 0) {
     return 30;
 }
+//The number are grouped up by the computers choice so 22 === "2" is computer "1" is computer picking paper. Same setup for human
+//EG: human is "3" coputer picks "1" === 31, human wins and computer picked "1" for paper
 
 }
 
