@@ -32,21 +32,26 @@ function playRound(humanChoice, computerChoice) {
 console.log(`Computer: ${computerChoice} Human: ${humanChoice}`);
 
 //create and else if chain, check if the choice is ===, <, or > and output
+// 1 === draw, 2 === computer win, and 3 === human win.
 if (humanChoice === computerChoice) {
-    return console.log("IT'S A DRAW!");
+    return 1;
 } else if (humanChoice === 0 && computerChoice === 1) {
-    return console.log("COMPUTER WINS!");
+    return 2;
 } else if (humanChoice === 1 && computerChoice === 2) {
-    return console.log("COMPUTER WINS!");
+    return 2;
 } else if (humanChoice === 2 && computerChoice === 0) {
-    return console.log("COMPUTER WINS!");
+    return 2;
 } else if (humanChoice === 2 && computerChoice === 1) {
-    return console.log("HUMAN WINS!");
-} else if (humanChoice === 2 && computerChoice === 1) {
-    return console.log("HUMAN WINS!");
-}
+    return 3;
+} else if (humanChoice === 0 && computerChoice === 2) {
+    return 3;
+} else if (humanChoice === 1 && computerChoice === 0) {
+    return 3;
 }
 
+}
+
+//Declare variables for the human and computer sections to pass to the functions
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
