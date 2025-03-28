@@ -39,7 +39,7 @@ function playGame () {
     playRound(humanSelection, computerSelection);
     function playRound(humanChoice, computerChoice) {
         //Log output to make sure it's working right.
-        console.log(`Computer: ${computerChoice} Human: ${humanChoice}`);
+        //console.log(`Computer: ${computerChoice} Human: ${humanChoice}`);
         
         //create and else if chain, check if the choice is ===, the same in specific senarios.
         // 1 === draw, 2 === computer win, and 3 === human win.
