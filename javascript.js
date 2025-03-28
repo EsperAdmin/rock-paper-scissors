@@ -28,10 +28,12 @@ if (choice === "rock") {
 }
 
 //Function for playing the game, logic for 5 round completion 
-function playGame (humanChoice, computerChoice) {
+function playGame () {
 
     for (rounds = 0; rounds < 5; ++rounds) {
-    playRound(humanChoice, computerChoice);
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
     function playRound(humanChoice, computerChoice) {
         //Log output to make sure it's working right.
         console.log(`Computer: ${computerChoice} Human: ${humanChoice}`);
@@ -70,4 +72,4 @@ function playGame (humanChoice, computerChoice) {
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playGame(humanSelection, computerSelection);
+playGame();
