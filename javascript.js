@@ -27,29 +27,41 @@ if (choice === "rock") {
 //return the true response from the else if chain.
 }
 
-function playRound(humanChoice, computerChoice) {
-//Create variables to grab choice from other functions.
-console.log(`Computer: ${computerChoice} Human: ${humanChoice}`);
+//Function for playing the game, logic for 5 round completion 
+function playGame (humanChoice, computerChoice) {
 
-//create and else if chain, check if the choice is ===, <, or > and output
-// 1 === draw, 2 === computer win, and 3 === human win.
-if (humanChoice === computerChoice) {
-    return 1;
-} else if (humanChoice === 0 && computerChoice === 1) {
-    return 21;
-} else if (humanChoice === 1 && computerChoice === 2) {
-    return 22;
-} else if (humanChoice === 2 && computerChoice === 0) {
-    return 20;
-} else if (humanChoice === 2 && computerChoice === 1) {
-    return 31;
-} else if (humanChoice === 0 && computerChoice === 2) {
-    return 32;
-} else if (humanChoice === 1 && computerChoice === 0) {
-    return 30;
-}
-//The number are grouped up by the computers choice so 22 === "2" is computer "1" is computer picking paper. Same setup for human
-//EG: human is "3" coputer picks "1" === 31, human wins and computer picked "1" for paper
+    function playRound(humanChoice, computerChoice) {
+        //Log output to make sure it's working right.
+        console.log(`Computer: ${computerChoice} Human: ${humanChoice}`);
+        
+        //create and else if chain, check if the choice is ===, the same in specific senarios.
+        // 1 === draw, 2 === computer win, and 3 === human win.
+        //Else if chain to manage Winner/Loser output and adding points.
+        if (humanChoice === computerChoice) {
+            return console.log(`IT'S A DRAW!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`);
+        } else if (humanChoice === 0 && computerChoice === 1) {
+            computerScore = ++computerScore;
+            return console.log(`COMPUTER WINS! PAPER BEATS ROCK!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`);
+        } else if (humanChoice === 1 && computerChoice === 2) {
+            computerScore = ++computerScore;
+            return console.log(`COMPUTER WINS! SCISSORS BEATS PAPER!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`);
+        } else if (humanChoice === 2 && computerChoice === 0) {
+            computerScore = ++computerScore;
+            return console.log(`COMPUTER WINS! ROCK BEATS SCISSORS!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`);
+        } else if (humanChoice === 2 && computerChoice === 1) {
+            humanScore = ++humanScore;
+            return console.log(`HUMAN WINS! SCISSORS BEATS PAPER!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`);
+        } else if (humanChoice === 0 && computerChoice === 2) {
+            humanScore = ++humanScore;
+            return console.log(`HUMAN WINS! ROCK BEATS SCISSORS!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`);
+        } else if (humanChoice === 1 && computerChoice === 0) {
+            humanScore = ++humanScore;
+            return console.log(`HUMAN WINS! PAPER BEATS ROCK!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`)
+        }
+        
+        }
+
+        let roundResults = playRound(humanSelection, computerSelection);
 
 }
 
@@ -57,36 +69,4 @@ if (humanChoice === computerChoice) {
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-//Variable to hold round results from playRound function
-let roundResults = playRound(humanSelection, computerSelection);
-
-
-//Else if chain to manage Winner/Loser output and adding points.
-if (roundResults === 1) {
-    console.log("IT'S A DRAW!")
-    console.log(`Human Score: ${humanScore}! Computer Score: ${computerScore}!`)
-} else if (roundResults === 21) {
-    computerScore = ++computerScore;
-    console.log("COMPUTER WINS! PAPER BEATS ROCK!")
-    console.log(`Human Score: ${humanScore}! Computer Score: ${computerScore}!`)
-} else if (roundResults === 22) {
-    computerScore = ++computerScore;
-    console.log("COMPUTER WINS! SCISSORS BEATS PAPER!")
-    console.log(`Human Score: ${humanScore}! Computer Score: ${computerScore}!`)
-} else if (roundResults === 20) {
-    computerScore = ++computerScore;
-    console.log("COMPUTER WINS! ROCK BEATS SCISSORS!")
-    console.log(`Human Score: ${humanScore}! Computer Score: ${computerScore}!`)
-} else if (roundResults === 31) {
-    humanScore = ++humanScore;
-    console.log("HUMAN WINS! SCISSORS BEATS PAPER!")
-    console.log(`Human Score: ${humanScore}! Computer Score: ${computerScore}!`)
-} else if (roundResults === 32) {
-    humanScore = ++humanScore;
-    console.log("HUMAN WINS! ROCK BEATS SCISSORS!")
-    console.log(`Human Score: ${humanScore}! Computer Score: ${computerScore}!`)
-} else if (roundResults === 30) {
-    humanScore = ++humanScore;
-    console.log("HUMAN WINS! PAPER BEATS ROCK!")
-    console.log(`Human Score: ${humanScore}! Computer Score: ${computerScore}!`)
-}
+playGame(humanSelection, computerSelection);
