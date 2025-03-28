@@ -69,6 +69,8 @@ function playGame () {
         }
     }
 
+    console.log(`GAME OVER!\n\nFINAL SCORES: \n\nHuman: ${humanScore}! Computer: ${computerScore}!`)
+
 }
 
 //Declare variables for the human and computer sections to pass to the functions
