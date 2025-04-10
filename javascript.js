@@ -49,25 +49,46 @@ function playGame () {
         // 1 === draw, 2 === computer win, and 3 === human win.
         //Else if chain to manage Winner/Loser output and adding points.
         if (humanChoice === computerChoice) {
-            return console.log(`IT'S A DRAW!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`);
+            let score = document.querySelector("#scoreValue");
+            let winOrLose = document.querySelector("#winOrLose");
+            winOrLose.textContent = "IT'S A DRAW!";
+            score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
         } else if (humanChoice === 0 && computerChoice === 1) {
             computerScore = ++computerScore;
-            return console.log(`COMPUTER WINS! PAPER BEATS ROCK!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`);
+            let score = document.querySelector("#scoreValue");
+            let winOrLose = document.querySelector("#winOrLose");
+            winOrLose.textContent = "COMPUTER WINS! PAPER BEATS ROCK!";
+            score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
         } else if (humanChoice === 1 && computerChoice === 2) {
             computerScore = ++computerScore;
-            return console.log(`COMPUTER WINS! SCISSORS BEATS PAPER!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`);
+            let score = document.querySelector("#scoreValue");
+            let winOrLose = document.querySelector("#winOrLose");
+            winOrLose.textContent = "COMPUTER WINS! SCISSORS BEATS PAPER!";
+            score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
         } else if (humanChoice === 2 && computerChoice === 0) {
             computerScore = ++computerScore;
-            return console.log(`COMPUTER WINS! ROCK BEATS SCISSORS!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`);
+            let score = document.querySelector("#scoreValue");
+            let winOrLose = document.querySelector("#winOrLose");
+            winOrLose.textContent = "COMPUTER WINS! ROCK BEATS SCISSORS!";
+            score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
         } else if (humanChoice === 2 && computerChoice === 1) {
             humanScore = ++humanScore;
-            return console.log(`HUMAN WINS! SCISSORS BEATS PAPER!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`);
+            let score = document.querySelector("#scoreValue");
+            let winOrLose = document.querySelector("#winOrLose");
+            winOrLose.textContent = "HUMAN WINS! SCISSORS BEATS PAPER!";
+            score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
         } else if (humanChoice === 0 && computerChoice === 2) {
             humanScore = ++humanScore;
-            return console.log(`HUMAN WINS! ROCK BEATS SCISSORS!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`);
+            let score = document.querySelector("#scoreValue");
+            let winOrLose = document.querySelector("#winOrLose");
+            winOrLose.textContent = "HUMAN WINS! ROCK BEATS SCISSORS!";
+            score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
         } else if (humanChoice === 1 && computerChoice === 0) {
             humanScore = ++humanScore;
-            return console.log(`HUMAN WINS! PAPER BEATS ROCK!\nHuman Score: ${humanScore}! Computer Score: ${computerScore}!`)
+            let score = document.querySelector("#scoreValue");
+            let winOrLose = document.querySelector("#winOrLose");
+            winOrLose.textContent = "HUMAN WINS! PAPER BEATS ROCK!";
+            score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
         }
         
         }

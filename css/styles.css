@@ -14,13 +14,13 @@ h1, h2 {
 .scores {
     display: flex;
     align-items: center;
-    margin-top: 5%;
+    margin-top: 2%;
     flex-direction: column;
 }
 
 .score {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 #scoreValue {
@@ -30,6 +30,10 @@ h1, h2 {
 #selection {
     display: flex;
     justify-content: center;
+    margin-top: 5%;
+}
+
+#winOrLose {
     margin-top: 5%;
 }
 
