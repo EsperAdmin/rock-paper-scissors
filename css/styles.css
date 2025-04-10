@@ -2,10 +2,39 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
 h1, h2 {
     margin-top: 5px;
     display: flex;
     justify-content: center;
+}
+
+.scores {
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+    flex-direction: column;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+}
+
+#scoreValue {
+    margin-left: 5px;
+}
+
+#selection {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+img {
+    height: 300px;
+    width: 300px;
+    margin: 0 10px 0 10px;
 }
