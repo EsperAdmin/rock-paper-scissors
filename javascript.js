@@ -1,6 +1,7 @@
 //Human and computer default scores
 let humanScore = 0;
 let computerScore = 0;
+let rounds = 0;
 
 //Create function to get a ranondom choice
 function getComputerChoice() {
@@ -55,6 +56,10 @@ function playGame () {
         //create and else if chain, check if the choice is ===, the same in specific senarios.
         // 1 === draw, 2 === computer win, and 3 === human win.
         //Else if chain to manage Winner/Loser output and adding points.
+
+    if(rounds < 5) {
+        ++rounds;
+        console.log(rounds);
         if (humanChoice === computerChoice) {
             let score = document.querySelector("#scoreValue");
             let winOrLose = document.querySelector("#winOrLose");
@@ -119,6 +124,13 @@ function playGame () {
             computerPicked.textContent = `Computer Picked ${convertChoice()}`
         }
         
+        } else {
+            let score = document.querySelector("#scoreValue");
+            let winOrLose = document.querySelector("#winOrLose");
+
+            winOrLose.textContent = "HUMAN WINS! PAPER BEATS ROCK!";
+            score.textContent = `GAME OVER! \nHuman: ${humanScore}! Computer: ${computerScore}!`;
         }
         
     }
+}
