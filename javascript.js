@@ -31,7 +31,6 @@ let target = event.target;
         
         playGame();
     });
-//return the true response from the else if chain.
 
 //Function for playing the game, logic for 5 round completion 
 function playGame () {
@@ -41,9 +40,17 @@ function playGame () {
     const computerSelection = getComputerChoice();
     //Call the playRound function and pass selections
     playRound(humanSelection, computerSelection);
+    
     function playRound(humanChoice, computerChoice) {
-        //Log output to make sure it's working right.
-        //console.log(`Computer: ${computerChoice} Human: ${humanChoice}`);
+        function convertChoice () {
+            if (computerChoice === 1) {
+                return "paper"
+            } else if (computerChoice === 2) {
+                return "scissors"
+            } else {
+                return "rock"
+            }
+        };
         
         //create and else if chain, check if the choice is ===, the same in specific senarios.
         // 1 === draw, 2 === computer win, and 3 === human win.
@@ -53,43 +60,65 @@ function playGame () {
             let winOrLose = document.querySelector("#winOrLose");
             winOrLose.textContent = "IT'S A DRAW!";
             score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
+
+            let computerPicked = document.querySelector("#computerPicked");
+            computerPicked.textContent = `Computer Picked ${convertChoice()}`
         } else if (humanChoice === 0 && computerChoice === 1) {
             computerScore = ++computerScore;
             let score = document.querySelector("#scoreValue");
             let winOrLose = document.querySelector("#winOrLose");
             winOrLose.textContent = "COMPUTER WINS! PAPER BEATS ROCK!";
             score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
+
+            let computerPicked = document.querySelector("#computerPicked");
+            computerPicked.textContent = `Computer Picked ${convertChoice()}`
         } else if (humanChoice === 1 && computerChoice === 2) {
             computerScore = ++computerScore;
             let score = document.querySelector("#scoreValue");
             let winOrLose = document.querySelector("#winOrLose");
             winOrLose.textContent = "COMPUTER WINS! SCISSORS BEATS PAPER!";
             score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
+
+            let computerPicked = document.querySelector("#computerPicked");
+            computerPicked.textContent = `Computer Picked ${convertChoice()}`
         } else if (humanChoice === 2 && computerChoice === 0) {
             computerScore = ++computerScore;
             let score = document.querySelector("#scoreValue");
             let winOrLose = document.querySelector("#winOrLose");
             winOrLose.textContent = "COMPUTER WINS! ROCK BEATS SCISSORS!";
             score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
+
+            let computerPicked = document.querySelector("#computerPicked");
+            computerPicked.textContent = `Computer Picked ${convertChoice()}`
         } else if (humanChoice === 2 && computerChoice === 1) {
             humanScore = ++humanScore;
             let score = document.querySelector("#scoreValue");
             let winOrLose = document.querySelector("#winOrLose");
             winOrLose.textContent = "HUMAN WINS! SCISSORS BEATS PAPER!";
             score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
+
+             let computerPicked = document.querySelector("#computerPicked");
+            computerPicked.textContent = `Computer Picked ${convertChoice()}`
         } else if (humanChoice === 0 && computerChoice === 2) {
             humanScore = ++humanScore;
             let score = document.querySelector("#scoreValue");
             let winOrLose = document.querySelector("#winOrLose");
             winOrLose.textContent = "HUMAN WINS! ROCK BEATS SCISSORS!";
             score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
+
+            let computerPicked = document.querySelector("#computerPicked");
+            computerPicked.textContent = `Computer Picked ${convertChoice()}`
         } else if (humanChoice === 1 && computerChoice === 0) {
             humanScore = ++humanScore;
             let score = document.querySelector("#scoreValue");
             let winOrLose = document.querySelector("#winOrLose");
             winOrLose.textContent = "HUMAN WINS! PAPER BEATS ROCK!";
             score.textContent = `Human: ${humanScore}! Computer: ${computerScore}!`;
+
+            let computerPicked = document.querySelector("#computerPicked");
+            computerPicked.textContent = `Computer Picked ${convertChoice()}`
         }
         
         }
+        
     }
