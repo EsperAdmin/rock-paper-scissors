@@ -30,8 +30,6 @@ if (choice === "rock") {
 //Function for playing the game, logic for 5 round completion 
 function playGame () {
 
-//Run a for loop to play 5 games
- for (rounds = 0; rounds < 5; ++rounds) {
     //Declare variables for the human and computer sections to pass to the functions
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
@@ -68,10 +66,6 @@ function playGame () {
         
         }
     }
-
-    console.log(`GAME OVER!\n\nFINAL SCORES: \n\nHuman: ${humanScore}! Computer: ${computerScore}!`)
-
-}
 
 //Declare variables for the human and computer sections to pass to the functions
 
