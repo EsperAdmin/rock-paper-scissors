@@ -9,29 +9,35 @@ return Math.floor(Math.random() * 3);
 //Return the the value.
 }
 
+let getHumanChoice = 'unknown';
 
-function getHumanChoice() {
-//Prompt the user for a choice and make it lowercase!
-let choice = prompt("Pick a choice! ROCK!, PAPER!, OR SCISSORS!").toLowerCase();
-//Create a else if chains for what the user inputs
-if (choice === "rock") {
-    return 0;
-} else if (choice === "paper") {
-    return 1;
-} else if (choice === "scissors") {
-    return 2;
-} else {
-    //Error number!
-    return 3;
-}
+const selection = document.querySelector("#selection");
+selection.addEventListener("click", (event) => {
+let target = event.target;
+    
+    switch(target.id) {
+        case "rock":
+        getHumanChoice = 0;
+        break;
+
+        case "paper":
+        getHumanChoice = 1;
+        break;
+
+        case "scissors":
+        getHumanChoice = 2;
+        break;
+        } 
+        
+        playGame();
+    });
 //return the true response from the else if chain.
-}
 
 //Function for playing the game, logic for 5 round completion 
 function playGame () {
 
     //Declare variables for the human and computer sections to pass to the functions
-    const humanSelection = getHumanChoice();
+    const humanSelection = getHumanChoice;
     const computerSelection = getComputerChoice();
     //Call the playRound function and pass selections
     playRound(humanSelection, computerSelection);
@@ -66,8 +72,3 @@ function playGame () {
         
         }
     }
-
-//Declare variables for the human and computer sections to pass to the functions
-
-
-playGame();
