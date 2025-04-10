@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
-h1 {
-    text-align: center;
+h1, h2 {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
 }
