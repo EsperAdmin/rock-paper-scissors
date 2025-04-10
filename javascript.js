@@ -130,6 +130,7 @@ function playGame () {
                     winOrLose.textContent = "HUMAN WINS THE GAME!";
                 }
             score.textContent = `GAME OVER! \nHuman: ${humanScore}! Computer: ${computerScore}!`;
+            computerPicked.textContent = "";
         }
         
     }
